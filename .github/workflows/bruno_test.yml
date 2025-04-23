@@ -20,13 +20,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' 
+          node-version: '18'
 
       - name: Install Bruno CLI
         run: npm install -g @usebruno/cli
 
       - name: Run Bruno Tests
-        run: bru run Reqres --reporter-html HTMLReporter/Results.html
+        run: bru run --reporter-html ../HTMLReporter/Results.html
+        working-directory: Reqres
 
       - name: Upload Test Report in artifact location
         if: always()
