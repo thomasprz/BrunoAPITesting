@@ -1,0 +1,22 @@
+meta {
+  name: Post Favorite Airports
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://airportgap.com/api/favorites
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{tokenValue}}
+}
+
+body:json {
+  {
+    "airport_id": "JFK",
+    "note": "My favorite airport"
+  }
+}
