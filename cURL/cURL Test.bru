@@ -1,0 +1,19 @@
+meta {
+  name: cURL Test
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://reqres.in/api/users
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  { "name": "morpheus", "job": "leader" }
+}
