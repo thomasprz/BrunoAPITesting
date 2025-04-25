@@ -25,3 +25,13 @@ vars:pre-request {
 vars:post-response {
   tokenValue: res.body.token
 }
+
+assert {
+  res.responseTime: lte 1000
+}
+
+tests {
+  test("response time test", function() {
+      expect(res.getResponseTime()).to.lte(2000);
+    });
+}
