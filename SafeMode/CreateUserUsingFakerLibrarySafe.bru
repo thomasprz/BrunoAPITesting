@@ -1,0 +1,21 @@
+meta {
+  name: CreateUserUsingFakerLibrarySafe
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://reqres.in/api/users
+  body: json
+  auth: none
+}
+
+script:pre-request {
+    const { faker } = require('@faker-js/faker');
+    const randomName = faker.person.firstName();
+    const randomJob = faker.person.jobTitle();
+    req.setBody({
+      name: randomName,
+      job: randomJob
+    });
+}
