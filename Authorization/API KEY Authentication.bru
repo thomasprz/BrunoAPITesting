@@ -1,0 +1,22 @@
+meta {
+  name: API KEY Authentication
+  type: http
+  seq: 6
+}
+
+get {
+  url: https://api.openweathermap.org/data/2.5/weather?q=paris&appid={{apiKey}}
+  body: none
+  auth: apikey
+}
+
+params:query {
+  q: paris
+  appid: {{apiKey}}
+}
+
+auth:apikey {
+  key: 
+  value: 
+  placement: header
+}
